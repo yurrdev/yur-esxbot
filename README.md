@@ -3,7 +3,22 @@
 This is a Discord bot designed to interface with the ES Extended (esx) framework for FiveM. It provides various commands allowing users to interact with the game server, fetching player information, server status, etc., directly from Discord.
 
 ## Features
-- Fetches player money balances (cash, bank, and black money).
+- Database Integration: The bot connects to a MySQL database (es_extended) using the mysql.connector library to store and retrieve user data, including accounts and inventory information.
+
+Command Handling: The bot uses the discord.ext.commands extension to handle and execute commands issued by users in a Discord server.
+
+Money Balance: Users can check their in-game money balance with the !money command. The bot retrieves this information from the database and displays it in an embedded message.
+
+Money Transfer: Users can transfer in-game money to other players using the !givecash command. The bot verifies the sender's balance and updates the recipient's balance accordingly in the database.
+
+Inventory Display: The !inventory command allows users to view their in-game inventory. The bot retrieves the inventory data from the database and presents it in an embedded message.
+
+Car Shop Listing: Users can view a list of available cars in a car dealership using the !carshop command. The bot fetches this information from the database and sends a message with car names and prices.
+
+Car Purchase: With the !buycar command, users can buy cars from the car dealership. The bot verifies the user's balance, deducts the purchase price, and adds the car to the user's owned vehicles in the database.
+
+Bot List: The !findbot command allows users to list all bots present in the Discord server.
+
 - Easily extendable to add more commands and features.
 - Uses Cogs for organizing command and event listeners.
 
